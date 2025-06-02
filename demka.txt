@@ -26,6 +26,8 @@ passwd sshuser
 usermod -aG sudo sshuser
 visudo
 sshuser ALL=(ALL) NOPASSWD: ALL
+su sshuser 
+ctr+d выход 
 useradd net_admin -U (на BR-RTR HQ-RTR)
 passwd net_admin
 5 задание
