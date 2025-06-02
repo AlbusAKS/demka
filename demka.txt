@@ -18,7 +18,7 @@ domain tomintech.ru
 search tomintech.ru
 nameserver 10.99.99.97
 sudo apt install iptables iptables-persistent (только для ISP)
-iptables -t  nat - A POSTRUTING -o ens192 -j MASQUERADE
+iptables -t  nat - A POSTROUTING -o ens192 -j MASQUERADE
 netfilter-persistent save
 3 задание (только на сервера)
 useradd sshuser -u 1010 -U
