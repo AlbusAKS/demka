@@ -12,7 +12,11 @@ systemctl restart networking
 nano /etc/sysctl.conf
  sysctl -p
 2 задание 
+подключить диск и нетворк
 nano /etc/resolv.conf
+domain tomintech.ru
+search tomintech.ru
+nameserver 10.99.99.97
 sudo apt install iptables iptables-persistent (только для ISP)
 iptables -t  nat - A POSTUTING -o ens192 -j MASQUERADE
 netfilter-persistent save
