@@ -23,7 +23,7 @@ netfilter-persistent save
 3 задание (только на сервера)
 useradd sshuser -u 1010 -U
 passwd sshuser
-usermod -aG sudo sshuseru
+usermod -aG sudo sshuser
 visudo
 sshuser ALL=(ALL) NOPASSWD: ALL
 useradd net_admin -U (на BR-RTR HQ-RTR)
