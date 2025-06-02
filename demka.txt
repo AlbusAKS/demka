@@ -1,0 +1,75 @@
+Команды которые юзал для демки 1 модуля
+1 задание:
+hostnamectl set-hostname isp.au-team.irpo
+hostnamectl set-hostname hq-rtr.au-team.irpo
+hostnamectl set-hostname br-rtr.au-team.irpo
+hostnamectl set-hostname hq-srv.au-team.irpo
+hostnamectl set-hostname hq-cli.au-team.irpo
+hostnamectl set-hostname br-srv.au-team.irpo
+newgrp 
+nmtui 
+systemctl restart networking 
+nano /etc/sysctl.conf
+ sysctl -p
+2 задание 
+nano /etc/resolv.conf
+sudo apt install iptables iptables-persistent (только для ISP)
+iptables -t  nat - A POSTUTING -o ens192 -j MASQUERADE
+netfilter-persistent save
+3 задание (только на сервера)
+useradd sshuser -u 1010 -U
+passwd sshuser
+usermod -aG sudo sshuseru
+visudo
+sshuser ALL=(ALL) NOPASSWD: ALL
+useradd net_admin -U (на BR-RTR HQ-RTR)
+passwd net_admin
+5 задание
+nano /etc/ssh/sshd_config ( на HQ-SRV и BR-SRV)
+Меняем Port на 2024
+MaxAuthTries на 2
+password aunthentication yes
+banner etc/ssh/bannermotd
+Match user sshuser
+AllowUsers sshuser
+nano etc/ssh/bannermotd
+Authorized acess only
+6 задание
+nmcli connection modify gre1 ip-tunnel.ttl 64
+nmcli connection modify gre2 ip-tunnel.ttl 64
+7 задание
+apt install frr ( на HQ-RTR)
+c ISP прописать домен через nano /etc/resolv.conf и выключить нахуй все порты кроме wired connection
+nano /etc/frr/daemons
+systemctl enable --now frr
+vtysh
+systemctl restart frr
+conf t 
+router ospf
+passive-interface default
+network 192.168.100.0/26 area 0
+network 192.168.100.64/28 area 0
+network 10.10.0.0/30 area 0
+area 0 authentication
+exit
+interface gre1
+no ip ospf network broadcast
+no ip ospf passive
+ip ospf authentication
+ ip ospf authentication-key password
+exit
+exit
+write 
+9 задание
+sudo apt install isc-dhcp-server
+nano /etc/default/isc-dhcp-server
+ (дописать ens и vlan (ens224.200))
+nano /etc/dhcp/dhcpd.conf (меняем subnet 192.168.20.0 netmask 255.255.255.240
+range 192.168.20.14
+option domain-name "au-team.irpo";
+option routers 192.168.20.1))
+systemctl restart isc-dhcp-server.service
+11 задание
+timedatectl set-timezone Asia/Tomsk
+На BR-RTR Создаем gre2 с айпишником от ISP BR 
+На HQ-RTR Создаем gre1 с айпишником от ISP HQ
