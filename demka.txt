@@ -35,10 +35,10 @@ nano /etc/ssh/sshd_config ( на HQ-SRV и BR-SRV)
 Меняем Port на 2024
 MaxAuthTries на 2
 password aunthentication yes
-banner etc/ssh/bannermotd
+banner /etc/ssh/bannermotd
 Match user sshuser
 AllowUsers sshuser
-nano etc/ssh/bannermotd
+nano /etc/ssh/bannermotd
 Authorized acess only
 6 задание
 nmcli connection modify gre1 ip-tunnel.ttl 64
