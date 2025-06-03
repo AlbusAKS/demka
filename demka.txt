@@ -79,7 +79,16 @@ systemctl restart isc-dhcp-server.service
 timedatectl set-timezone Asia/Tomsk
 На BR-RTR Создаем gre2 с айпишником от ISP BR 
 На HQ-RTR Создаем gre1 с айпишником от ISP HQ
-Модуль 2 задание 9 установка яндекс 
+Модуль 2 
+задание 9 установка яндекс 
 wget https://browser.yandex.ru/download/?os=linux -O yandex-browser.deb
 sudo dpkg -i yandex-browser.deb
 sudo apt --fix-broken install
+3 задание
+sudo apt update
+sudo apt install chrony
+sudo systemctl start chrony
+sudo systemctl enable chrony
+sudo systemctl status chrony
+sudo nano /etc/chrony/chrony.conf
+
