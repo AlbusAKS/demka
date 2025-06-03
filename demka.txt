@@ -121,3 +121,4 @@ server {
 на Moodle – moodle.au-team.irpo
 на MediaWiki – wiki.au-team.irpo
 https://rutube.ru/video/private/8fd1f7a9b3df0e98835f614e2c64ec1a/?p=O9AQM0xBumBXM914CJ00VQ
+https://github.com/Flicks1383/Demo2025_debian/tree/main/ (для отсталых) 
