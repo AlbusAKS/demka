@@ -120,4 +120,4 @@ server {
 На HQ-CLI в браузере заходим по доменному имени
 на Moodle – moodle.au-team.irpo
 на MediaWiki – wiki.au-team.irpo
-https://studio.rutube.ru/videos?show_moderation=1&amp;ordering=calculated_date_asc#video
+https://rutube.ru/video/private/8fd1f7a9b3df0e98835f614e2c64ec1a/?p=O9AQM0xBumBXM914CJ00VQ
