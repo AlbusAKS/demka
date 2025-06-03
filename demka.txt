@@ -81,6 +81,7 @@ timedatectl set-timezone Asia/Tomsk
 На HQ-RTR Создаем gre1 с айпишником от ISP HQ
 Модуль 2 
 задание 9 установка яндекс  (на HQ-CLI)
+https://krivoshein.site/kak-ustanovit-yandeks-brauzer-na-ubuntu-22-04-20-04/
 wget https://browser.yandex.ru/download/?os=linux -O yandex-browser.deb
 sudo dpkg -i yandex-browser.deb
 sudo apt --fix-broken install
