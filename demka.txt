@@ -91,6 +91,7 @@ sudo systemctl start chrony
 sudo systemctl enable chrony
 sudo systemctl status chrony
 sudo nano /etc/chrony/chrony.conf
+8 задание 
 sudo apt install nginx
 systemctl enable --now nginx
 nano /etc/ nginx/nginx.conf
