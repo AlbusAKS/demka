@@ -1,5 +1,5 @@
 Команды которые юзал для демки 1 модуля
-1 задание:
+1 Задание:
 hostnamectl set-hostname isp.au-team.irpo
 hostnamectl set-hostname hq-rtr.au-team.irpo
 hostnamectl set-hostname br-rtr.au-team.irpo
@@ -12,7 +12,7 @@ nmtui
 systemctl restart networking 
 nano /etc/sysctl.conf
  sysctl -p
-2 задание 
+2 Задание 
 подключить диск и нетворк
 nano /etc/resolv.conf
 domain tomintech.ru
@@ -31,7 +31,7 @@ su sshuser
 ctr+d выход 
 useradd net_admin -U (на BR-RTR HQ-RTR)
 passwd net_admin
-5 задание
+5 Задание
 nano /etc/ssh/sshd_config ( на HQ-SRV и BR-SRV)
 Меняем Port на 2024
 MaxAuthTries на 2
@@ -41,10 +41,10 @@ Match user sshuser
 AllowUsers sshuser
 nano /etc/ssh/bannermotd
 Authorized acess only
-6 задание
+6 Задание
 nmcli connection modify gre1 ip-tunnel.ttl 64
 nmcli connection modify gre2 ip-tunnel.ttl 64
-7 задание
+7 Задание
 apt install frr ( на HQ-RTR)
 c ISP прописать домен через nano /etc/resolv.conf и выключить нахуй все порты кроме wired connection
 nano /etc/frr/daemons
@@ -67,7 +67,7 @@ ip ospf authentication
 exit
 exit
 write 
-9 задание
+9 Задание
 sudo apt install isc-dhcp-server
 nano /etc/default/isc-dhcp-server
  (дописать ens и vlan (ens224.200))
@@ -76,7 +76,7 @@ range 192.168.20.14
 option domain-name "au-team.irpo";
 option routers 192.168.20.1))
 systemctl restart isc-dhcp-server.service
-11 задание
+11 Задание
 timedatectl set-timezone Asia/Tomsk
 На BR-RTR Создаем gre2 с айпишником от ISP BR 
 На HQ-RTR Создаем gre1 с айпишником от ISP HQ
@@ -86,14 +86,14 @@ https://krivoshein.site/kak-ustanovit-yandeks-brauzer-na-ubuntu-22-04-20-04/(с�
 wget https://browser.yandex.ru/download/?os=linux -O yandex-browser.deb
 sudo dpkg -i yandex-browser.deb
 sudo apt --fix-broken install
-3 задание
+3 Задание
 sudo apt update (На HQ-RTR)
 sudo apt install chrony
 sudo systemctl start chrony
 sudo systemctl enable chrony
 sudo systemctl status chrony
 sudo nano /etc/chrony/chrony.conf
-8 задание 
+8 Задание 
 sudo apt install nginx (На HQ-RTR)
 systemctl enable --now nginx
 nano /etc/ nginx/nginx.conf
@@ -120,4 +120,4 @@ server {
 На HQ-CLI в браузере заходим по доменному имени
 на Moodle – moodle.au-team.irpo
 на MediaWiki – wiki.au-team.irpo
-
+https://studio.rutube.ru/videos?show_moderation=1&amp;ordering=calculated_date_asc#video
