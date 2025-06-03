@@ -91,4 +91,30 @@ sudo systemctl start chrony
 sudo systemctl enable chrony
 sudo systemctl status chrony
 sudo nano /etc/chrony/chrony.conf
+sudo apt install nginx
+systemctl enable --now nginx
+nano /etc/ nginx/nginx.conf
+Cпускаемся в конец документа и перед последней фигурной скобкой { прописываем
+
+server  {
+        listen 80;
+        server_name moodle.au-team.irpo;
+
+        location / {
+            proxy_pass http://192.168.100.2:80;
+        }
+}
+
+server {
+        listen 80;
+        server_name wiki.au-team.irpo;
+
+        location / {
+            proxy_pass http://192.168.200.2:8080;
+        }
+}
+ systemctl restart nginx
+На HQ-CLI в браузере заходим по доменному имени
+на Moodle – moodle.au-team.irpo
+на MediaWiki – wiki.au-team.irpo
 
