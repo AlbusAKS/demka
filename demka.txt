@@ -80,19 +80,19 @@ timedatectl set-timezone Asia/Tomsk
 На BR-RTR Создаем gre2 с айпишником от ISP BR 
 На HQ-RTR Создаем gre1 с айпишником от ISP HQ
 Модуль 2 
-задание 9 установка яндекс 
+задание 9 установка яндекс  (на HQ-CLI)
 wget https://browser.yandex.ru/download/?os=linux -O yandex-browser.deb
 sudo dpkg -i yandex-browser.deb
 sudo apt --fix-broken install
 3 задание
-sudo apt update
+sudo apt update (На HQ-RTR)
 sudo apt install chrony
 sudo systemctl start chrony
 sudo systemctl enable chrony
 sudo systemctl status chrony
 sudo nano /etc/chrony/chrony.conf
 8 задание 
-sudo apt install nginx
+sudo apt install nginx (На HQ-RTR)
 systemctl enable --now nginx
 nano /etc/ nginx/nginx.conf
 Cпускаемся в конец документа и перед последней фигурной скобкой { прописываем
